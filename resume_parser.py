@@ -67,8 +67,8 @@ def extract_resume_text(uploaded_file) -> str:
         raise ExtractionError('uploaded file is empty')
 
     if (file_name.endswith('.pdf')):
-        extract_text_from_pdf(file_bytes)
+        return extract_text_from_pdf(file_bytes)
     elif(file_name.endswith('.docx')):
-        extract_text_from_docx(file_bytes)
+        return extract_text_from_docx(file_bytes)
     else:
         raise ExtractionError('unsupported file type, please upload pdf or docx file type')

@@ -56,6 +56,7 @@ def analyze_resume(resume_text: str, api_key: str)-> dict:
             contents = prompt,
             config = types.GenerateContentConfig(
                 response_mime_type = 'application/json',
+                max_output_tokens=2048,
             ),
         )
     except Exception as e:
